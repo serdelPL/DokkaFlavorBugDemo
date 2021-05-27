@@ -1,0 +1,33 @@
+apply plugin: 'org.jetbrains.dokka'
+
+dokkaHtml {
+    suppressObviousFunctions.set(true)
+    dokkaSourceSets {
+        configureEach {
+            includeNonPublic.set(false)
+        }
+    }
+}
+
+
+//
+//dokkaHtml {
+//
+//    suppressObviousFunctions.set(true)
+//
+//    dokkaSourceSets {
+//
+//        named("main") {
+//            suppress.set(true)
+//        }
+//
+//        register("devFlavor") {
+//            sourceRoots.from(file("src/main"))
+//            sourceRoots.from(file("src/dev"))
+//        }
+//        register("prodFlavor") {
+//            sourceRoots.from(file("src/main"))
+//            sourceRoots.from(file("src/prod"))
+//        }
+//    }
+//}
