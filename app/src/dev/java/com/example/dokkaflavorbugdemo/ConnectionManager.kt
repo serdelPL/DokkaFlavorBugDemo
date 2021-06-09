@@ -10,7 +10,7 @@ interface ConnectionManager {
 
 internal class ConnectionManagerImpl() : ConnectionManager{
     override fun connect(demoRequest: DemoRequest): DemoResult {
-        Log.d("Tsag","Connect to dev")
+        Log.d("Tag","Connect to dev")
         return DemoResult("Dev")
     }
 }

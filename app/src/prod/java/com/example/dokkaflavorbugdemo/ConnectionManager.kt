@@ -1,16 +1,16 @@
 package com.example.dokkaflavorbugdemo
 
 import android.util.Log
-import com.example.dokkaflavorbugdemo.model.DemoRequest
-import com.example.dokkaflavorbugdemo.model.DemoResult
+import com.example.dokkaflavorbugdemo.model.ProdRequest
+import com.example.dokkaflavorbugdemo.model.ProdResult
 
 interface ConnectionManager {
-    fun connect(demoRequest: DemoRequest): DemoResult
+    fun connect(prodRequest: ProdRequest): ProdResult
 }
 
 internal class ConnectionManagerImpl() : ConnectionManager{
-    override fun connect(demoRequest: DemoRequest): DemoResult {
-        Log.d("Tsag","Connect to prod")
-        return DemoResult("Prod")
+    override fun connect(prodRequest: ProdRequest): ProdResult {
+        Log.d("Tag","Connect to prod")
+        return ProdResult("Prod")
     }
 }
