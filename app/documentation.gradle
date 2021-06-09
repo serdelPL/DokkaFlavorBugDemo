@@ -4,7 +4,14 @@ dokkaHtml {
     suppressObviousFunctions.set(true)
     dokkaSourceSets {
         configureEach {
-            includeNonPublic.set(false)
+            if (it.name in ["prod", "dev"]) {
+                suppress.set(false)
+                displayName.set(it.name)
+//                classpath.from(file("src/main"))
+                sourceRoots.from(file("src/main"))
+            } else {
+                suppress.set(true)
+            }
         }
     }
 }
